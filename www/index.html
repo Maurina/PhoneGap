@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+     <link rel="stylesheet" href="css/themes/chores.css" />
+  <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="/js/jquery.mobile-1.4.5.css" />
+    <script src="/js/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="/js/jquery.mobile-1.4.5.js"  type="text/javascript"></script>
+    <title>Chores</title>
+</head>
+
+<body>
+    <!--page1--------------------------------------------------------------------------------------------------->   
+<section id="home" data-role="page" data-theme="b">
+            <header data-role="header" data-position="fixed" >
+                    <img src="img/clean.jpg" alt="wetfloor sign">
+                    <h1></h1>
+                    <a href="#page2" class="ui-btn-right"   style="background: orange; color: white;">Assignments</a>
+                </header>
+    <div class="app">
+ 
+        <h1>Chores</h1>
+        
+                <div id="deviceready" class="blink">
+                        <p class="event listening">Connecting to Device</p>
+                        <p class="event received">You are Ready to go</p>
+                        <p id="deviceVersion"></p>
+                        <p id="batteryLevel"></p>
+                        <p id="pluggedIn"></p>
+                    </div>
+                    
+    </div>
+
+    <footer data-role="footer" data-position="fixed" data-theme="b">
+        <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+    
+</footer>
+    </section>
+
+    <!--page2--------------------------------------------------------------------------------------------------------->   
+
+    <section id="page2" data-role="page" >
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <img src="img/girlWorking.jpg" alt="girl working">
+                <h1>Assignments</h1>
+                <a href="#home" class="ui-btn-left"  style="background: white; color: orange;">Back</a>
+                <a href="#page3" class="ui-btn-right"   style="background: orange; color: white;">Chores</a>
+            </header>
+    
+            <div class="ui-content">
+                    <div data-role="collapsible-set" data-iconpos="top">
+
+                            <div data-role="collapsible"  >
+                           <h3 ><input type="text" name="username" id="username3" value="" placeholder="Your Name"/></h3>
+                            <h4>Monday</h4>
+                            
+                                <ul>
+                                    <li><input type="text" name="userChore" id="chore2" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore3" id="chore3" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Tuesday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore4" id="chore4" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore5" id="chore5" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Wednesday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore6" id="chore6" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore7" id="chore7" value="" placeholder="Chore"/></li>
+                                </ul>
+                            
+                            <h4>Thurday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore8" id="chore8" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore9" id="chore9" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Friday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore10" id="chore10" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore11" id="chore11" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Saturday</h4>
+                                 <ul>
+                                    <li><input type="text" name="userChore12" id="chore12" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore13" id="chore13" value="" placeholder="Chore"/></li>
+                                </ul>
+                            </div>
+                            
+                            <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                                    <h3><input type="text" name="username" id="username4" value="" placeholder="Your Name"/></h3>
+                                    <h4>Monday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore14" id="chore14" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore15" id="chore15" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Tuesday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore16" id="chore16" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore17" id="chore17" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Wednesday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore18" id="chore18" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore19" id="chore19" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    
+                                    <h4>Thurday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore20" id="chore20" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore21" id="chore21" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Friday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore22" id="chore22" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore23" id="chore23" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Saturday</h4>
+                                         <ul>
+                                            <li><input type="text" name="userChore24" id="chore24" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore25" id="chore25" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    </div>
+                            
+                            <div data-role="collapsible">
+                                    <h3><input type="text" name="username" id="username4" value="" placeholder="Your Name"/></h3>
+                                    <h4>Monday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore26" id="chore26" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore27" id="chore27" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Tuesday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore28" id="chore28" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore29" id="chore29" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Wednesday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore30" id="chore30" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore31" id="chore31" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    
+                                    <h4>Thurday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore32" id="chore32" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore33" id="chore33" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Friday</h4>
+                                        <ul>
+                                            <li><input type="text" name="userChore34" id="chore34" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore35" id="chore35" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    <h4>Saturday</h4>
+                                         <ul>
+                                            <li><input type="text" name="userChore36" id="chore36" value="" placeholder="Chore"/></li>
+                                            <li><input type="text" name="userChore37" id="chore37" value="" placeholder="Chore"/></li>
+                                        </ul>
+                                    </div>
+                          <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                                <h3><input type="text" name="username" id="username5" value="" placeholder="Your Name"/></h3>
+                                <h4>Monday</h4>
+                                    <ul>
+                                        <li><input type="text" name="userChore38" id="chore38" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore39" id="chore39" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                <h4>Tuesday</h4>
+                                    <ul>
+                                        <li><input type="text" name="userChore40" id="chore40" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore41" id="chore41" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                <h4>Wednesday</h4>
+                                    <ul>
+                                        <li><input type="text" name="userChore42" id="chore42" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore43" id="chore43" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                
+                                <h4>Thurday</h4>
+                                    <ul>
+                                        <li><input type="text" name="userChore44" id="chore44" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore45" id="chore45" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                <h4>Friday</h4>
+                                    <ul>
+                                        <li><input type="text" name="userChore46" id="chore46" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore47" id="chore47" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                <h4>Saturday</h4>
+                                     <ul>
+                                        <li><input type="text" name="userChore48" id="chore48" value="" placeholder="Chore"/></li>
+                                        <li><input type="text" name="userChore49" id="chore49" value="" placeholder="Chore"/></li>
+                                    </ul>
+                                </div>
+                            <div data-role="collapsible" >
+                                    <h3><input type="text" name="username" id="username6" value="" placeholder="Your Name"/></h3>
+                            <h4>Monday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore50" id="chore50" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore53" id="chore53" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Tuesday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore54" id="chore54" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore55" id="chore55" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Wednesday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore65" id="chore65" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore75" id="chore75" value="" placeholder="Chore"/></li>
+                                </ul>
+                            
+                            <h4>Thurday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore58" id="chore58" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore59" id="chore59" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Friday</h4>
+                                <ul>
+                                    <li><input type="text" name="userChore60" id="chore60" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore61" id="chore61" value="" placeholder="Chore"/></li>
+                                </ul>
+                            <h4>Saturday</h4>
+                                 <ul>
+                                    <li><input type="text" name="userChore62" id="chore62" value="" placeholder="Chore"/></li>
+                                    <li><input type="text" name="userChore63" id="chore63" value="" placeholder="Chore"/></li>
+                                </ul>
+                            </div>
+                                    </div>                             
+
+                        </div>
+            </div>
+    
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+            <a href="#home" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Home</a>
+        </footer>
+    
+        </section>
+
+    <!--page3--------------------------------------------------------------------------------------------------->   
+    <section id="page3" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="b"> 
+                <h1>Requirements</h1>
+                <a href="#page2" class="ui-btn-left"   style="background: white; color: orange;">Back</a>
+                <a href="#page4" class="ui-btn-right"   style="background: orange; color: white;">Finished</a>
+               
+            </header>
+            <div class="ui-content">
+              <ul data-role="listview" data-divider-theme="b">
+                <li data-role="list-divider">Common Rooms</li>
+                    <li>
+                        <a style="background:white; color: orange;" href="#kitchen">Kitchen </a>
+                        <a style="background:orange; color: white;"href="#needNotes">Shopping List</a>
+                    </li>
+                    <li>
+                        <a  style="background:white; color: orange;"href="#bathroom">Bathroom</a>
+                        <a  style="background:orange; color: white;" href="#BneedNotes">Shopping List</a>
+                    </li>
+                    <li>
+                        <a style="background:white; color: orange;" href="#family">Family Room</a>
+                        <a  style="background:orange; color: white;" href="#FneedNotes">Shopping List</a>
+                    </li>
+                
+                <li data-role="list-divider">Individual Responsibilities</li>
+                  <li>
+                      <a style="background:white; color: orange;" href="#bedroom">Bedroom</a></li>
+                  <li>
+                    <a style="background:white; color: orange;" href="#laundry">Laundry</a>
+                    <a style="background:orange; color: white;" href="#LneedNotes">Shopping List</a>
+                  </li>
+          
+                <li data-role="list-divider">Yard Work</li>
+                  <li>
+                      <a  style="background:white; color: orange;" href="#flowerBed">Flower Beds</a>
+                  </li>
+                  <li>
+                      <a  style="background:white; color: orange;" href="#mow">Lawn</a>
+                  </li>
+                  <li>
+                      <a  style="background:white; color: orange;" href="#garden">Garden</a>
+                  </li>
+              </ul>
+            </div>
+          
+          
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                    <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+                <a href="#home" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Home</a>
+            </footer>
+              </section>
+    
+
+<!--pageKitchen----------------------------------------------------------------------------------------------------->
+<section id="kitchen" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Kitchen</h1>
+            <img src="img/kitchen.jpg" alt="kitchen">
+            <a href="#page3" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                        
+                             <!-- SLIDERS AND FLIPSWITCHES -->
+          <form method="get" action="">
+                <fieldset class="ui-field-contain">
+                  <legend>Time Finished in Minutes</legend>
+                  <label for="num"></label>
+                  <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                </fieldset>
+                <legend></legend>
+              </form>
+                          <label for="pf1">Dishwasher Unloaded/Loaded</label>
+                          <input type="checkbox" name="pf1" id="pf1" />
+                          <label for="pf2">Hand Washing</label>
+                          <input type="checkbox" name="pf2" id="pf2" />
+                          <label for="pf3">Counters</label>
+                          <input type="checkbox" name="pf3" id="pf3" />
+                          <label for="pf4">Table</label>
+                          <input type="checkbox" name="pf4" id="pf4" />
+                          <label for="pf5">Stove</label>
+                          <input type="checkbox" name="pf5" id="pf5" />
+                          <label for="pf6">Floor Swept</label>
+                          <input type="checkbox" name="pf6" id="pf6" />
+                          <label for="pf7">Floor Mopped</label>
+                          <input type="checkbox" name="pf7" id="pf7" />
+                          <label for="pf8">Trash Taken Out</label>
+                          <input type="checkbox" name="pf8" id="pf8" />
+                     
+
+                          
+        </div>
+    </section>
+    <section id="needNotes" data-role="page" >
+        <header data-role="header" data-theme="b">
+            <h1>Items Needed</h1>
+            <img src="img/list.jpg" alt="paper and pen">
+            <a href="#page3" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+                <!--forms-->
+                <form method="GET" action="">
+                        <label for="basicfield">Your Name:</label>
+                        <input type="text" name="username" id="username" value="" placeholder="Your Name"/>
+                        <label for="basicfield">Grocery Items:</label>
+
+                        <label for="basicfield" class="ui-hidden-accessible">Item:</label>
+                        <input type="text" name="item11" id="kitchenItem11" value="" placeholder="Milk"/>
+                        <input type="text" name="item21" id="kitchenItem21" value="" placeholder="Bread"/>
+                        <input type="text" name="item31" id="kitchenItem31" value="" placeholder="...."/>
+                        <input type="text" name="item41" id="kitchenItem41" value="" placeholder="...."/>
+                        <input type="text" name="item51" id="kitchenItem51" value="" placeholder="...."/>
+                        <input type="text" name="item3" id="kitchenItem3" value="" placeholder="...."/>
+                        <input type="text" name="item4" id="kitchenItem4" value="" placeholder="...."/>
+                        <input type="text" name="item5" id="kitchenItem5" value="" placeholder="...."/>
+                      
+                  
+                </form>     
+                <form method="GET" action="">
+                <label for="basicfield">Cleaning Items:</label>
+
+                <label for="basicfield" class="ui-hidden-accessible">Item:</label>
+                <input type="text" name="item1" id="kitchenItem1" value="" placeholder="Dish Soap"/>
+                <input type="text" name="item2" id="kitchenItem2" value="" placeholder="Mop Cleaner"/>
+            
+              
+          
+        </form> 
+                <!--end form-->  
+            </div>
+     
+               
+    </section>
+
+<!--pageBathroom----------------------------------------------------------------------------------------------------->
+<section id="bathroom" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Bathroom</h1>
+            <img src="img/bathroom.jpg" alt="bathroom">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                        
+                          <label for="pf9">Mirror</label>
+                          <input type="checkbox" name="pf9" id="pf9" />
+                          <label for="pf10">Sink</label>
+                          <input type="checkbox" name="pf10" id="pf10" />
+                          <label for="pf11">Cabinet</label>
+                          <input type="checkbox" name="pf11" id="pf11" />
+                          <label for="pf12">Toliet</label>
+                          <input type="checkbox" name="pf12" id="pf12" />
+                          <label for="pf13">Bathtub</label>
+                          <input type="checkbox" name="pf13" id="pf13" />
+                          <label for="pf141">Floor Swept</label>
+                          <input type="checkbox" name="pf141" id="pf141" />
+                          <label for="pf151">Floor Mopped</label>
+                          <input type="checkbox" name="pf151" id="pf151" />
+                          <label for="pf161">Trash Taken Out</label>
+                          <input type="checkbox" name="pf161" id="pf161" />
+                        </fieldset>
+                      </form>
+        </div>
+    </section>
+    <section id="BneedNotes" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Items Needed</h1>
+            <img src="img/list.jpg" alt="paper and pen">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+                <!--forms-->
+                <form method="GET" action="">
+                        <label for="basicfield">Your Name:</label>
+                        <input type="text" name="username" id="username2" value="" placeholder="Your Name"/>
+                        <label for="basicfield">Items that need to be purchased:</label>
+
+                        <label for="basicfield" class="ui-hidden-accessible">Item:</label>
+                        <input type="text" name="item6" id="bathroomItem1" value="" placeholder="Hand Soap"/>
+                        <input type="text" name="item7" id="bathroomItem2" value="" placeholder="Toliet Paper"/>
+                        <input type="text" name="item8" id="bathroomItem3" value="" placeholder="Shampoo"/>
+                        <input type="text" name="item9" id="bathroomItem4" value="" placeholder="Conditioner"/>
+                        <input type="text" name="item510" id="bathroomItem5" value="" placeholder="Body Wash"/>
+                        </div>
+                  
+                </form>                    
+                <!--end form-->  
+            </div>
+     
+               
+    </section>
+
+
+<!--pageFamily----------------------------------------------------------------------------------------------------->
+<section id="family" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Family Room</h1>
+            <img src="img/family.jpg" alt="family room">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                           
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                          
+                          <label for="pf16">Pick Up</label>
+                          <input type="checkbox" name="pf16" id="pf16" />
+                          <label for="pf17">Dust</label>
+                          <input type="checkbox" name="pf17" id="pf17" />
+                          <label for="pf18">Windows</label>
+                          <input type="checkbox" name="pf18" id="pf18" />
+                          <label for="pf19">Polish Wood</label>
+                          <input type="checkbox" name="pf19" id="pf19" />
+                          <label for="pf20">Vacuum</label>
+                          <input type="checkbox" name="pf20" id="pf20" />
+                        </fieldset>
+                      </form>
+        </div>
+    </section>
+    <section id="FneedNotes" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Items Needed</h1>
+            <img src="img/list.jpg" alt="paper and pen">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+                <!--forms-->
+                <form method="GET" action="">
+                        <label for="basicfield">Your Name:</label>
+                        <input type="text" name="username" id="username2" value="" placeholder="Your Name"/>
+                        <label for="basicfield">Items that need to be purchased:</label>
+
+                        <label for="basicfield" class="ui-hidden-accessible">Item:</label>
+                        <input type="text" name="item11" id="familyItem1" value="" placeholder="Wood Polish"/>
+                        <input type="text" name="item12" id="familyItem2" value="" placeholder="Glass Cleaner"/>
+                        <input type="text" name="item13" id="familyItem3" value="" placeholder="...."/>
+                        <input type="text" name="item14" id="familyItem4" value="" placeholder="...."/>
+                        <input type="text" name="item15" id="familyItem5" value="" placeholder="...."/>
+                        </div>
+                  
+                </form>                    
+                <!--end form-->  
+            </div>
+     
+               
+    </section>
+
+<!--pageBedroom----------------------------------------------------------------------------------------------------->
+<section id="bedroom" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Bedroom</h1>
+            <img src="img/bedroom.jpg" alt="bedroom">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                              
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                         
+                          <label for="pf26">Bed Made</label>
+                          <input type="checkbox" name="pf26" id="pf26" />
+                          <label for="pf21">Toys Put Away</label>
+                          <input type="checkbox" name="pf21" id="pf21" />
+                          <label for="pf22">Dust</label>
+                          <input type="checkbox" name="pf22" id="pf22" />
+                          <label for="pf23">Windows</label>
+                          <input type="checkbox" name="pf23" id="pf23" />
+                          <label for="pf24">Clothes Washed</label>
+                          <input type="checkbox" name="pf24" id="pf24" />
+                          <label for="pf25">Clothes Put Away</label>
+                          <input type="checkbox" name="pf25" id="pf25" />
+                        
+                        </fieldset>
+                      </form>
+        </div>             
+    </section>
+
+<!--pageLaundry----------------------------------------------------------------------------------------------------->
+<section id="laundry" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Laundry Room</h1>
+            <img src="img/laundry.jpg" alt="laundry">
+            <a href="#page3" class="ui-btn ui-btn-left"  style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                                <fieldset class="ui-field-contain">
+                                        <form method="get" action="">
+                                                <fieldset class="ui-field-contain">
+                                                  <legend>Time Finished in Minutes</legend>
+                                                  <label for="num"></label>
+                                                  <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                                </fieldset>
+                                                <legend</legend>
+                         
+                          <label for="pf27">Clothes Sorted</label>
+                          <input type="checkbox" name="pf27" id="pf27" />
+                          <label for="pf28">Clothes Washed</label>
+                          <input type="checkbox" name="pf28" id="pf28" />
+                          <label for="pf29">Clothes Dried</label>
+                          <input type="checkbox" name="pf29" id="pf29" />
+                          <label for="pf30">Clothes Folded & Put Away</label>
+                          <input type="checkbox" name="pf30" id="pf30" />
+                       </fieldset>
+                      </form>
+        </div>
+    </section>
+    <section id="LneedNotes" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Items Needed</h1>
+            <img src="img/list.jpg" alt="paper and pen">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+                <!--forms-->
+                <form method="GET" action="">
+                        <label for="basicfield">Your Name:</label>
+                        <input type="text" name="username" id="username2" value="" placeholder="Your Name"/>
+                        <label for="basicfield">Items that need to be purchased:</label>
+
+                        <label for="basicfield" class="ui-hidden-accessible">Item:</label>
+                        <input type="text" name="item16" id="laundryItem1" value="" placeholder="Laundry Soap"/>
+                        <input type="text" name="item17" id="laundryItem2" value="" placeholder="Fabric Softener"/>
+                        <input type="text" name="item18" id="laundryItem3" value="" placeholder="...."/>
+                        <input type="text" name="item19" id="laundryItem4" value="" placeholder="...."/>
+                        <input type="text" name="item20" id="laundryItem5" value="" placeholder="...."/>
+                        </div>
+                  
+                </form>                    
+                <!--end form-->  
+            </div>
+     
+               
+    </section>
+
+<!--pageFlower----------------------------------------------------------------------------------------------------->
+<section id="flowerBed" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Flower Beds</h1>
+            <img src="img/flowers.jpg" alt="flowers">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                        
+                          <label for="pf31">Weeded</label>
+                          <input type="checkbox" name="pf31" id="pf31" />
+                          <label for="pf32">Trash Removed</label>
+                          <input type="checkbox" name="pf32" id="pf32" />
+                          <label for="pf33">Watered</label>
+                          <input type="checkbox" name="pf33" id="pf33" />
+                       </fieldset>
+                      </form>
+        </div>
+    </section>
+
+<!--pageLawn----------------------------------------------------------------------------------------------------->
+<section id="mow" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Lawn</h1>
+            <img src="img/grass.jpg" alt="grass">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                          <label for="pf34">Items Moved off Lawn</label>
+                        
+                          <input type="checkbox" name="pf34" id="pf34" />
+                          <label for="pf35">Trash Removed</label>
+                          <input type="checkbox" name="pf35" id="pf35" />
+                          <label for="pf36">Mowed</label>
+                          <input type="checkbox" name="pf36" id="pf36" />
+                          <label for="pf37">Watered</label>
+                          <input type="checkbox" name="pf37" id="pf37" />
+                       </fieldset>
+                      </form>
+        </div>
+    </section>
+
+
+<!--pageGarden----------------------------------------------------------------------------------------------------->
+<section id="garden" data-role="page">
+        <header data-role="header" data-theme="b">
+            <h1>Garden</h1>
+            <img src="img/garden.jpg" alt="garden">
+            <a href="#page3" class="ui-btn ui-btn-left" style="background: white; color: orange;">Back</a>
+        </header>
+        <div class="ui-content">
+               
+                        <fieldset data-role="controlgroup">
+                                <form method="get" action="">
+                                        <fieldset class="ui-field-contain">
+                                          <legend>Time Finished in Minutes</legend>
+                                          <label for="num"></label>
+                                          <input type="range" name="num" id="num" value="25" min="0" max="100" />
+                                        </fieldset>
+                                        <legend></legend>
+                         
+                          <label for="pf38">Trash Removed</label>
+                          <input type="checkbox" name="pf38" id="pf38" />
+                          <label for="pf39">Weeded</label>
+                          <input type="checkbox" name="pf39" id="pf39" />
+                          <label for="pf40">Ripe Items Picked</label>
+                          <input type="checkbox" name="pf40" id="pf40" />
+                          <label for="pf41">Watered</label>
+                          <input type="checkbox" name="pf41" id="pf41" />
+                       </fieldset>
+                      </form>
+        </div>
+    </section>
+
+<!--page4--------------------------------------------------------------------------------------------------------->   
+
+          <section id="page4" data-role="page">
+                <header data-role="header" data-position="fixed" data-theme="b">
+                    <h1>Chore Assignments</h1>
+                    <a href="#page3" class="ui-btn-left" style="background: white; color: orange;">Back</a>
+           
+                </header>
+        
+                <div class="ui-content">
+                    <!--forms-->
+                    <form method="GET" action="">
+                        <label for="basicfield">Your Name:</label>
+                        <input type="text" name="username3" id="userName3" value="" placeholder="Your Name"/>
+                    </form>                    
+                   
+                        </div>
+                        <a href="#complete" class="ui-btn" style="background: orange; color: white;">YES</a>
+                        <a href="#notComplet" class="ui-btn" style="background: white; color: orange;">NO</a>
+        
+                        <footer data-role="footer" data-position="fixed" data-theme="b">
+                            <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+                        <a href="#home" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Home</a>
+                    </footer>
+        
+            </section>
+
+<!--pageComplete--------------------------------------------------------------------------------------------------------->   
+
+<section id="complete" data-role="page">
+        <header data-role="header" data-position="fixed" data-theme="b">
+            <h1>Password</h1>
+            
+         <img src="img/celebrate.jpg" alt="firewords">
+         
+   
+        </header>
+
+        <div class="ui-content">
+         <h1>You finished your chores!</h1>
+            <h2>Today's WiFi password</h2>
+            <h2>Pi32D</h2>
+         <label for="slider2"></label>
+        
+    
+        </div>
+
+        <footer data-role="footer" data-position="fixed" data-theme="b">
+            <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+        <a href="#home" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Home</a>
+    </footer>
+
+    </section>
+
+    <!--pageComplete--------------------------------------------------------------------------------------------------------->   
+
+<section id="notComplet" data-role="page">
+        <header data-role="header" data-position="fixed" data-theme="b">
+            <h1>No Password</h1>
+  
+            <a href="#page2" class="ui-btn-left" style="background: orange; color: white;">Assignment</a>
+   
+        </header>
+
+        <div class="ui-content">
+         <h1>You are not finished!</h1>
+   
+         <h3>Return to work to get the WiFi Password</h3>
+         
+    
+        </div>
+        <footer data-role="footer" data-position="fixed" data-theme="b">
+            <h4 style="color:orange";>Clean Homes &copy;2019</h4>
+        <a href="#home" class="ui-btn ui-btn-left"   style="background: white; color: orange;">Home</a>
+    </footer>
+
+    </section>
+
+      <!--<script type="text/javascript" src="cordova.js"></script>-->  
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</body>
+
+</html>
