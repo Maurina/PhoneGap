@@ -41,9 +41,10 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
      <link rel="stylesheet" href="css/themes/chores.css" />
   <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="/js/jquery.mobile-1.4.5.css" />
-    <script src="/js/jquery-1.11.1.js" type="text/javascript"></script>
-    <script src="/js/jquery.mobile-1.4.5.js"  type="text/javascript"></script>
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+
+    <script src="js/jquery.mobile-1.4.5.js"  type="text/javascript"></script>
     <title>Chores</title>
 </head>
 
@@ -55,19 +56,23 @@
                     <h1></h1>
                     <a href="#page2" class="ui-btn-right"   style="background: orange; color: white;">Assignments</a>
                 </header>
-    <div class="app">
+   
  
         <h1>Chores</h1>
+
+        <div class="app">
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+                
+                <p id="batteryLevel"></p>
+                <p id="pluggedIn"></p>
+            </div>
+        </div>
+
         
-                <div id="deviceready" class="blink">
-                        <p class="event listening">Connecting to Device</p>
-                        <p class="event received">You are Ready to go</p>
-                        <p id="deviceVersion"></p>
-                        <p id="batteryLevel"></p>
-                        <p id="pluggedIn"></p>
-                    </div>
-                    
-    </div>
+           
+ 
 
     <footer data-role="footer" data-position="fixed" data-theme="b">
         <h4 style="color:orange";>Clean Homes &copy;2019</h4>
@@ -757,7 +762,7 @@
         <header data-role="header" data-position="fixed" data-theme="b">
             <h1>Password</h1>
             
-         <img src="img/celebrate.jpg" alt="firewords">
+         <img src="img/fireworks.jpg" alt="firewords">
          
    
         </header>

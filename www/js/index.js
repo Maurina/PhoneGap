@@ -34,31 +34,26 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        window.addEventListener('batterystatus', onBatteryStatus, false);
+
+        function onBatteryStatus(status) {
+            console.log('Level: ' + status.level + "isPlugged: " + status.isPlugged);
+            document.getElementById('batteryLevel').innerHTML = `Battery Level: ${status.level}`;
+            document.getElementById('pluggedIn').innerHTML = `Plugged in: ${status.isPlugged}`;
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
- 
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-        newElement.setAttribute('style', 'display:block;');
 
-       
-        console.log('Received Event: ' + id);
-
-        //device version
-        
-        let deviceVersion = device.version;
-        console.log (deviceVersion);
-       document.getElementById('deviceVersion').innerHTML = `Device Version: ${deviceVersion}`;
-
-        //vibrate  
-        navigator.vibrate(5000);
-        console.log ('here'+navigator.vibrate )
-
+        //Event Called
+        //console.log('Received Event: ' + id);
          //battery status
          window.addEventListener('batterystatus', onBatteryStatus, false);
 
@@ -68,9 +63,10 @@ var app = {
              document.getElementById('pluggedIn').innerHTML = `Plugged in: ${status.isPlugged}`;
          }
        
-     
     }
- 
- 
-
 };
+
+function onBatteryStatus(status) {
+    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+    $('.battery-status').text("Battery Level: " + status.level + "% Plugged in: " + status.isPlugged);
+}
